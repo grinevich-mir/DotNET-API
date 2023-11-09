@@ -16,7 +16,7 @@ namespace Application.BlogPost.Commands.CreateBlogComment
 
         public Task<Guid> Handle(CreateBlogCommentCommand request, CancellationToken cancellationToken)
         {
-            var BlogComment = _iCommentBlogRepository.Insert(new Domain.Entities.BlogComment(Guid.NewGuid(), request.PostId, request.Content));
+            var BlogComment = _iCommentBlogRepository.Insert(new Domain.Entities.BlogComment(Guid.NewGuid(), request.Content));
             return Task.FromResult(BlogComment);
         }
     }
